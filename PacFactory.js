@@ -66,13 +66,13 @@ function update() {
 function checkCollisions(item) {
   let container = document.getElementById('container');
   
-  if (item.position.x + item.velocity.x + item.newPac.width > container.clientWidth + 25 ||
-      item.position.x + item.velocity.x < 25){
+  if (item.position.x + item.velocity.x + item.newPac.width >= container.clientWidth + 25 ||
+      item.position.x + item.velocity.x <= 25){
         item.velocity.x = -item.velocity.x;
         item.newPac.direction = (item.newPac.direction + 1) % 2; 
   };
       
-  if (item.position.y + item.velocity.y + item.newPac.width > container.clientHeight + 25 ||
-      item.position.y + item.velocity.y < 25) item.velocity.y = -item.velocity.y;
+  if (item.position.y + item.velocity.y + item.newPac.width >= container.clientHeight + 25 ||
+      item.position.y + item.velocity.y <= 25) item.velocity.y = -item.velocity.y;
     }
     
