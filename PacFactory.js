@@ -1,31 +1,38 @@
+//Nested Array of Images
 const pacArray = [
   ['PacMan1.png', 'PacMan2.png'],
   ['PacMan3.png', 'PacMan4.png']
 ];
+
+//Array to hole the newPac objects
 const pacMen = [];
 
-
+//Random Generator
 function getRandom(scale){
   return {
-    x: Math.ceil((Math.random() * scale) + 10),
-    y: Math.ceil((Math.random() * scale) + 30), 
+    x: Math.ceil(Math.random() * scale),
+    y: Math.ceil(Math.random() * scale), 
   }
 }
 
 function makePac(){
   let velocity = getRandom(20);
-  let position = getRandom(270);
+  let position = getRandom(250);
   let container = document.getElementById('container');
   let newPac = document.createElement('img');
-
+//Sets position to interior of 'Container' Div
+  position.x += 30;
+  position.y += 25;
+//Initializes the img src for the Pac  
   newPac.direction = 0;
   newPac.mouth = 0;
+  
   newPac.style.position = 'absolute';
   newPac.width = 100;
-  newPac.src = pacArray[0][0];
+  newPac.src = pacArray[newPac.direction][newPac.mouth];
 
-  newPac.style.top = position.y;
-  newPac.style.left = position.x;
+  newPac.style.top = `${position.y}px`;
+  newPac.style.left = `${position.x}px`;
   
 
   container.appendChild(newPac);
@@ -35,9 +42,6 @@ function makePac(){
     velocity,
     newPac,
   }
-
-
-
 };
 
 function makeOne(){
