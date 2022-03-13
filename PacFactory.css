@@ -4,16 +4,6 @@ body{
   margin: 20px;  
 }
 
-#container{
-  background-color: navy;
-  border: solid;
-  border-width: 5px;
-  border-color: whitesmoke;
-  height: 550px;
-
-
-}
-
 button{
   height: 30px;
   width: max-content;
@@ -21,7 +11,14 @@ button{
   margin-top: 10px;
 }
 
+#container{
+  background-color: navy;
+  border: solid;
+  border-width: 5px;
+  border-color: whitesmoke;
+  height: 550px;
+}
+
 .buttons{
   text-align: center;
- 
 }
