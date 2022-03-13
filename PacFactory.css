@@ -1,12 +1,14 @@
 body{
-  background-color: lightblue;
-  padding: 10px;
+  background-color: black;
+  padding: 5px;
   margin: 20px;  
 }
 
 #container{
-  background-color: grey;
+  background-color: navy;
   border: solid;
+  border-width: 5px;
+  border-color: whitesmoke;
   height: 550px;
 
 
@@ -23,7 +25,3 @@ button{
   text-align: center;
  
 }
-/* 
-img{
-  width: 100px;
-} */
