@@ -22,7 +22,7 @@ function makePac(){
   let newPac = document.createElement('img');
 //Sets position to interior of 'Container' Div
   position.x += 30;
-  position.y += 25;
+  position.y += 30;
 //Initializes the img src for the Pac  
   newPac.direction = 0;
   newPac.mouth = 0;
@@ -33,6 +33,7 @@ function makePac(){
 
   newPac.style.top = `${position.y}px`;
   newPac.style.left = `${position.x}px`;
+
   
 
   container.appendChild(newPac);
@@ -48,36 +49,36 @@ function makeOne(){
   pacMen.push(makePac());
 };
 
-// function update() {
+function update() {
   
-//   pacMen.forEach((item) => {
-//       checkCollisions(item)
-//       //mouth = item.newPac.mouth 
-//       item.position.x += item.velocity.x;
-//       item.position.y += item.velocity.y;
-
-//       item.newPac.style.left = item.position.x;
-//       item.newPac.style.top = item.position.y;
-
-//       // if (faceRight === true) direction = 0;
-//       // if (faceRight === false) direction = 1;
+  pacMen.forEach((item) => {
+      checkCollisions(item)
       
-//       item.newimg.src = pacArray[direction][mouth];
-//       mouth = (mouth + 1) % 2; 
-//   })
-  
-//   setTimeout(update, 75);
-// }
+      item.position.x += item.velocity.x;
+      item.position.y += item.velocity.y;
 
-// function checkCollisions(item) {
+      item.newPac.style.left = item.position.x + 'px';
+      item.newPac.style.top = item.position.y + 'px';
+
+          
+      item.newPac.src = pacArray[item.newPac.direction][item.newPac.mouth];
+      item.newPac.mouth = (item.newPac.mouth + 1) % 2; 
+  })
   
-//   if (item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
-//       item.position.x + item.velocity.x < 0){
-//       item.velocity.x = -item.velocity.x;
-//       faceRight = !faceRight;
-//   }
-        
-//   if (item.position.y + item.velocity.y + item.newimg.width > window.innerHeight ||
-//       item.position.y + item.velocity.y < 0) item.velocity.y = -item.velocity.y;
+  setTimeout(update, 75);
+}
+
+function checkCollisions(item) {
+  let container = document.getElementById('container');
   
-//   }
+  if (item.position.x + item.velocity.x + item.newPac.width > container.clientWidth + 30 ||
+      item.position.x + item.velocity.x < 30){
+      item.velocity.x = -item.velocity.x;
+      item.newPac.direction = (item.newPac.direction + 1) % 2; 
+    }
+          
+  
+  if (item.position.y + item.velocity.y + item.newPac.width > container.clientHeight + 30 ||
+      item.position.y + item.velocity.y < 30) item.velocity.y = -item.velocity.y;
+  
+  }
