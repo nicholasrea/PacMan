@@ -1,3 +1,15 @@
-# PacMan
-
-A fun project that creates PacMen at random locations within a container.  When the 'Game' starts, the PacMen move at independant velocities, and animate each PacMan depending on direction.  Enjoy!
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PacMan Facotry</title>
+  </head>
+  <link rel="stylesheet" href="./PacFactory.css"  />     
+  <body>
+    <div id="container"></div>
+    <div class="buttons">
+        <button onclick="makeOne()">Add PacMan</button> 
+        <button onclick="update()">Start Game</button>
+    </div>
+  </body>
+  <script src="PacFactory.js"></script>
+</html>
