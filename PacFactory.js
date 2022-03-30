@@ -1,7 +1,7 @@
 //Nested Array of Images
 const pacArray = [
-  ['PacMan1.png', 'PacMan2.png'],
-  ['PacMan3.png', 'PacMan4.png']
+  ['images/PacMan1.png', 'images/PacMan2.png'],
+  ['images/PacMan3.png', 'images/PacMan4.png']
 ];
 
 //Array to hold the newPac objects
